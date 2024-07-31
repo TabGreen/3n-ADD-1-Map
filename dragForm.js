@@ -22,7 +22,25 @@ document.addEventListener('mouseup', () => {
 document.addEventListener('mousemove', (e) => {
     if (isMouseDown) {
         // 更新元素的位置
-        form.style.left = e.clientX - mousePositionOfDraggable.x + 'px';
-        form.style.top = e.clientY - mousePositionOfDraggable.y + 'px';
+        let posX = e.clientX - mousePositionOfDraggable.x;
+        let posY = e.clientY - mousePositionOfDraggable.y;
+        // 保证元素在窗口内移动
+        if(posX < 0)posX = 0;
+        if(posX > window.innerWidth - form.offsetWidth) posX = window.innerWidth - form.offsetWidth;
+        if(posY < 0)posY = 0;
+        if(posY > window.innerHeight - form.offsetHeight) posY = window.innerHeight - form.offsetHeight;
+        form.style.left = posX + 'px';
+        form.style.top = posY + 'px';
     }
+});
+window.addEventListener('resize',()=>{
+    let posX = form.offsetLeft;
+    let posY = form.offsetTop;
+    // 保证元素在窗口内移动
+    if(posX < 0)posX = 0;
+    if(posX > window.innerWidth - form.offsetWidth) posX = window.innerWidth - form.offsetWidth;
+    if(posY < 0)posY = 0;
+    if(posY > window.innerHeight - form.offsetHeight) posY = window.innerHeight - form.offsetHeight;
+    form.style.left = posX + 'px';
+    form.style.top = posY + 'px';
 });

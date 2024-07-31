@@ -23,7 +23,7 @@
 使用VS Code，Tabnine AI，以及 阿里-通义千问AI 完成开发，总耗时约5小时。
 ### 开发过程
 开发过程中，整个CSS重构了1次，可以在目录中找到重构前的文件styleOld.css。
-dragForm.js文件几乎全部由AI（阿里-通义千问）编写。
+dragForm.js文件由AI（阿里-通义千问）做初步填充。
 script.js中的DrawByAI函数由 通义AI 完成。setCanvas函数由 通义AI 改进。
 
 开发过程中 TabnineAI 和 通义AI 全力协助，帮助我完成了这个应用。（包括上面的 3n+1猜想简介 也是 通义AI 生成的）
