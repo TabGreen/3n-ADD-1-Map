@@ -14,6 +14,7 @@ const cvsZoom = 20;
 
 
 var downloadLink = document.createElement('a');
+var date = new Date();
 var formHistory = {
     n: 114514,
     color: '#00ff00',
@@ -120,13 +121,17 @@ function drawByAI(numList,size){
 //不想自己写了，AI写的挺好，改一改用着吧
 }
 function main(){
+    let startTime = date.getTime();//计时
+
     disabledForm();
     if(verification()){
         let numList = comput(parseInt(numN.value));
         let size = getMaxAndLength(numList);
         drawByAI(numList,size);
-    }saveTheLast();
-    startForm();
+        saveTheLast();
+    }startForm();
+
+    console.log('use time:',(date.getTime() - startTime)+'ms');//计时
 }
 function saveImage(){
     downloadLink.download =  '3n+1Map——'+'初始值：'+numN.value+'.png';
