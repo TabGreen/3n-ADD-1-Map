@@ -1,6 +1,6 @@
-var form = document.getElementById('settings');
 var startButton = document.getElementById('startButton');
 var useTheLastButton = document.getElementById('useTheLast');
+var saveButton = document.getElementById('saveButton');
 var numN = document.getElementById('numN');
 var colorInput = document.getElementById('color');
 var cvs = document.getElementById('mapCVS');
@@ -12,6 +12,8 @@ const maxWidth = 800;
 const maxHeight = maxWidth * (10 / 16);
 const cvsZoom = 20;
 
+
+var downloadLink = document.createElement('a');
 var formHistory = {
     n: 114514,
     color: '#00ff00',
@@ -29,12 +31,14 @@ function disabledForm(){
     colorInput.disabled = true;
     useTheLastButton.disabled = true;
     startButton.disabled = true;
+    saveButton.disabled = true;
 }
 function startForm(){
     numN.disabled = false;
     colorInput.disabled = false;
     useTheLastButton.disabled = false;
     startButton.disabled = false;
+    saveButton.disabled = false;
 }
 function verification(){
     let num = parseInt(numN.value);
@@ -69,14 +73,12 @@ function comput(n){
     var numList = [];
     while(n!=1){
         numList.push(n);
-        console.log(n);
         if(n%2===1){
             n = 3*n+1;
         }else{
             n/=2;
         }
     }numList.push(1);
-    console.log(1);
     return numList;
 }
 function getMaxAndLength(numList){
@@ -126,5 +128,11 @@ function main(){
     }saveTheLast();
     startForm();
 }
+function saveImage(){
+    downloadLink.download =  '3n+1Map——'+'初始值：'+numN.value+'.png';
+    downloadLink.href = cvs.toDataURL('image/png');
+    downloadLink.click();
+}
 useTheLastButton.addEventListener('click',useTheLast);
 startButton.addEventListener('click',main);
+saveButton.addEventListener('click',saveImage);
