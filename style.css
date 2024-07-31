@@ -1,0 +1,46 @@
+body *{
+    font-family:'阿里巴巴普惠体','Courier New',serif;
+}input[type='number'],input[type='color'],button{
+    transition-delay: 0ms;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}input[type='number'],input[type='color'],button{
+    border:5px solid black;
+    border-radius: 6px;
+
+    font-size: 1em;
+    background-color: rgba(128, 128, 128, 0.5);
+}input[type='number']{
+    width:5em;
+}input[type='color']{
+    border:1px solid;
+}input[type='number']:hover,input[type='color']:hover,button:hover{
+    border-color:rgb(128, 128, 128);
+    background-color: rgba(0,0,0,0);
+}input[type='number']:focus{
+    border-color: #0f0;
+    background-color: rgba(0,0,0,0);
+}input[type='color']:focus{
+    border-color:rgb(128, 128, 128);
+    background-color: #0f0;
+}canvas{
+    border:5px solid black;
+    border-radius: 6px;
+}
+
+form{
+    border: 6px solid #0f0;
+    border-radius:10px;
+    background-color: white;
+    width:min-content;
+    padding: 10px;
+    padding-top: 0;
+    text-align: center;
+    position: fixed;
+    top:0;
+}#dragHere{
+    height: 1em;
+    background-color: #0f0;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
