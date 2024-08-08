@@ -4,6 +4,11 @@ var draggable = document.getElementById('dragHere');
 var isMouseDown = false;
 var mousePositionOfDraggable = { x: null, y: null };
 
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    handleClick();
+});
+
 // 计算鼠标相对于元素的位置
 draggable.addEventListener('mousedown', (e) => {
     // 保存当前的鼠标相对于元素的位置
