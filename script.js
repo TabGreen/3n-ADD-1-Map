@@ -242,8 +242,3 @@ useTheLastButton.addEventListener('click',useTheLast);
 startButton.addEventListener('click',handleClick);
 saveButton.addEventListener('click',saveImage);
 
-
-
-
-
-//console.log
