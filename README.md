@@ -87,6 +87,6 @@ script.js中的DrawByAI函数由 通义AI 完成。setCanvas函数由 通义AI �
 ![关注](img/follow.png)
 ![三连](img/3link.png)
 
-或者，按下这个也勉强能接受
+或者，按下这个也**勉强**能接受
 
 ![Star](img/star.png)
